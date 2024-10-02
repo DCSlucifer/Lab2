@@ -96,6 +96,14 @@ int main() {
         cout << "Enter your choice: ";
         cin >> choice;
 
+        // Kiểm tra lỗi nhập liệu
+        if (cin.fail()) {
+            cin.clear(); // Xóa cờ lỗi
+            cin.ignore(10000, '\n'); // Bỏ qua các ký tự còn lại trong bộ đệm
+            cout << "Invalid input. Please enter a number.\n";
+            continue;
+        }         
+
         switch (choice) {
             case 1:
                 cout << "Enter the value to push onto the stack: ";
